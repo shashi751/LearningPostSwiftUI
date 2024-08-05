@@ -14,7 +14,19 @@ class PostViewModel:ObservableObject{
     
     func fetchPost(){
         
-        NetworkService().fetchRequest(body:nil, type: [PostModel].self, method: .GET, url: "\(baseURL)posts") { [weak self] result in
+        Task{
+            do{
+                let list = try await NetworkService().fetchRequestAsyncAwait(body: nil, type: [PostModel].self, method: .GET, url: "\(baseURL)posts")
+                DispatchQueue.main.async {
+                    self.posts = list
+                }
+            }
+            catch let error{
+                print(error)
+            }
+        }
+        
+        /*NetworkService().fetchRequest(body:nil, type: [PostModel].self, method: .GET, url: "\(baseURL)posts") { [weak self] result in
             
             switch result{
             case .success(let modal):
@@ -26,7 +38,7 @@ class PostViewModel:ObservableObject{
             case .failure(let error):
                 print(error)
             }
-        }
+        }*/
     }
     
     func createNewPost(title:String, body:String){

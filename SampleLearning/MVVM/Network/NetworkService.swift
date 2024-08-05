@@ -24,6 +24,7 @@ enum HTTPMethod:String{
 
 protocol APIHandelerProtocol{
     func fetchRequest<T : Codable>(method:HTTPMethod, body:Data?, type:T.Type, url:String, callback:@escaping((Result<Data, DemoError>) -> Void))
+    func fetchRequestAsyncAwait<T : Codable>(method:HTTPMethod, body:Data?, type:T.Type, url:String) async throws -> Data
 }
 
 protocol NetworkServiceProtocol{
@@ -65,6 +66,18 @@ class NetworkService:NSObject{
         }
     }
     
+    func fetchRequestAsyncAwait<T: Codable>(body:Data?, type:T.Type, method:HTTPMethod, url:String) async throws -> T{
+        
+        do{
+            let data = try await aPIHandeler.fetchRequestAsyncAwait(method: method, body: body, type: type, url: url)
+            let model = try await responseHandeler.fetchModalAsyncWait(type: type, data: data)
+            return model
+        }
+        catch let error{
+            throw error
+        }
+    }
+    
 }
 
 class APIHandeler : APIHandelerProtocol{
@@ -94,6 +107,28 @@ class APIHandeler : APIHandelerProtocol{
         task.resume()
         
     }
+    
+    func fetchRequestAsyncAwait<T : Codable>(method:HTTPMethod, body:Data?, type:T.Type, url:String) async throws -> Data{
+        
+        guard let url = URL(string: url) else{
+            throw DemoError.BadURL
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        if let body = body{
+            request.httpBody = body
+        }
+        
+        do{
+            let (data, _) = try  await URLSession.shared.data(for: request)
+            return data
+        }
+        catch let error {
+            throw error
+        }
+        
+    }
 }
 
 class ResponseHandeler{
@@ -108,6 +143,18 @@ class ResponseHandeler{
         catch let error{
             print(error)
             callback(.failure(.DecodingError))
+        }
+        
+    }
+    
+    func fetchModalAsyncWait<T:Codable>(type:T.Type, data:Data) async throws -> T{
+        
+        do{
+            let decodedData = try JSONDecoder().decode(type, from: data)
+            return decodedData
+        }
+        catch let error{
+            throw error
         }
         
     }

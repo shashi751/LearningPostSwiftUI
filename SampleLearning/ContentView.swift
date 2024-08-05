@@ -48,7 +48,9 @@ struct ContentView: View {
                 )
             }
             .task {
-                viewModel.fetchPost()
+                 await viewModel.fetchPost()
+                viewModel.raceConditionhandeling()
+                print("After viewModel.raceConditionhandeling()")
             }
         }
     }

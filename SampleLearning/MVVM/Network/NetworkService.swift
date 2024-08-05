@@ -119,14 +119,13 @@ class APIHandeler : APIHandelerProtocol{
         if let body = body{
             request.httpBody = body
         }
+        let (data, response) = try  await URLSession.shared.data(for: request)
         
-        do{
-            let (data, _) = try  await URLSession.shared.data(for: request)
-            return data
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else{
+            throw DemoError.invalidResponse
         }
-        catch let error {
-            throw error
-        }
+        
+        return data
         
     }
 }

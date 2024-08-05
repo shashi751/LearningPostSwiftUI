@@ -21,6 +21,8 @@
 		D7B7D5602C5D3F5400EEC4AB /* PostRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B7D55F2C5D3F5400EEC4AB /* PostRow.swift */; };
 		D7B7D5642C5D456F00EEC4AB /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B7D5632C5D456F00EEC4AB /* CreatePostView.swift */; };
 		D7B7D5662C5D4B9900EEC4AB /* UIApplication++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B7D5652C5D4B9900EEC4AB /* UIApplication++.swift */; };
+		D7B7D5692C60E5BA00EEC4AB /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B7D5682C60E5BA00EEC4AB /* Person.swift */; };
+		D7B7D56B2C60E8BB00EEC4AB /* TicketBookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B7D56A2C60E8BB00EEC4AB /* TicketBookingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		D7B7D55F2C5D3F5400EEC4AB /* PostRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRow.swift; sourceTree = "<group>"; };
 		D7B7D5632C5D456F00EEC4AB /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
 		D7B7D5652C5D4B9900EEC4AB /* UIApplication++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication++.swift"; sourceTree = "<group>"; };
+		D7B7D5682C60E5BA00EEC4AB /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		D7B7D56A2C60E8BB00EEC4AB /* TicketBookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketBookingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				D7B7D5542C5D361700EEC4AB /* PostModel.swift */,
+				D7B7D5682C60E5BA00EEC4AB /* Person.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			children = (
 				D7B7D55F2C5D3F5400EEC4AB /* PostRow.swift */,
 				D7B7D5632C5D456F00EEC4AB /* CreatePostView.swift */,
+				D7B7D56A2C60E8BB00EEC4AB /* TicketBookingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7B7D5692C60E5BA00EEC4AB /* Person.swift in Sources */,
 				D7B7D55D2C5D3BED00EEC4AB /* PostViewModel.swift in Sources */,
 				D7B7D5602C5D3F5400EEC4AB /* PostRow.swift in Sources */,
 				D7B7D55A2C5D36AD00EEC4AB /* NetworkService.swift in Sources */,
@@ -325,6 +332,7 @@
 				D7B7D5642C5D456F00EEC4AB /* CreatePostView.swift in Sources */,
 				D7B7D5552C5D361700EEC4AB /* PostModel.swift in Sources */,
 				D7B7D52B2C5D35FD00EEC4AB /* SampleLearningApp.swift in Sources */,
+				D7B7D56B2C60E8BB00EEC4AB /* TicketBookingView.swift in Sources */,
 				D7B7D5662C5D4B9900EEC4AB /* UIApplication++.swift in Sources */,
 				D7B7D5572C5D362A00EEC4AB /* MyConstants.swift in Sources */,
 			);

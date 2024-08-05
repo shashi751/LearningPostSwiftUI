@@ -48,7 +48,9 @@ struct CreatePostView: View {
                             isActive = true
                         }
                         if !titleText.isEmpty && !bodyText.isEmpty{
-                            viewModel.createNewPost(title: titleText, body: bodyText)
+                            Task{
+                                await viewModel.createNewPost(title: titleText, body: bodyText)
+                            }
                         }
                         
                     }) {

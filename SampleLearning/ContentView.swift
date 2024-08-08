@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject private var viewModel = PostViewModel()
+    @ObservedObject private var operationQueueViewModel = OperationQueueViewModel()
     
     @State private var isCreateViewActive = false
     
@@ -49,10 +50,14 @@ struct ContentView: View {
             }
             .task {
                  await viewModel.fetchPost()
-                viewModel.raceConditionhandeling()
-                print("After viewModel.raceConditionhandeling()")
+//                self.raceConditionDemo()
             }
         }
+    }
+    
+    func raceConditionDemo(){
+        viewModel.raceConditionhandeling()
+        print("After viewModel.raceConditionhandeling()")
     }
 }
 

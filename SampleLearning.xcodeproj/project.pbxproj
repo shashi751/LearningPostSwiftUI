@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D768419C2C61D7F6007E2B19 /* OperationQueueViewMOdel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D768419B2C61D7F6007E2B19 /* OperationQueueViewMOdel.swift */; };
 		D7B7D52B2C5D35FD00EEC4AB /* SampleLearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B7D52A2C5D35FD00EEC4AB /* SampleLearningApp.swift */; };
 		D7B7D52D2C5D35FD00EEC4AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B7D52C2C5D35FD00EEC4AB /* ContentView.swift */; };
 		D7B7D52F2C5D35FE00EEC4AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7B7D52E2C5D35FE00EEC4AB /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D768419B2C61D7F6007E2B19 /* OperationQueueViewMOdel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueueViewMOdel.swift; sourceTree = "<group>"; };
 		D7B7D5272C5D35FD00EEC4AB /* SampleLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7B7D52A2C5D35FD00EEC4AB /* SampleLearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleLearningApp.swift; sourceTree = "<group>"; };
 		D7B7D52C2C5D35FD00EEC4AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				D7B7D55C2C5D3BED00EEC4AB /* PostViewModel.swift */,
+				D768419B2C61D7F6007E2B19 /* OperationQueueViewMOdel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				D7B7D55A2C5D36AD00EEC4AB /* NetworkService.swift in Sources */,
 				D7B7D52D2C5D35FD00EEC4AB /* ContentView.swift in Sources */,
 				D7B7D5642C5D456F00EEC4AB /* CreatePostView.swift in Sources */,
+				D768419C2C61D7F6007E2B19 /* OperationQueueViewMOdel.swift in Sources */,
 				D7B7D5552C5D361700EEC4AB /* PostModel.swift in Sources */,
 				D7B7D52B2C5D35FD00EEC4AB /* SampleLearningApp.swift in Sources */,
 				D7B7D56B2C60E8BB00EEC4AB /* TicketBookingView.swift in Sources */,
